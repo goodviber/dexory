@@ -1,0 +1,20 @@
+<%= link_to 'Download CSV', download_csv_path %>
+
+<table>
+  <thead>
+    <tr>
+      <% @data.headers.each do |header| %>
+        <th><%= header %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @data.each do |row| %>
+      <tr>
+        <% row.each do |field| %>
+          <td><%= field.last %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

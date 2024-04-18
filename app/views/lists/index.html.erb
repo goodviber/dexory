@@ -17,7 +17,7 @@
     <br />
   <% end %>
   <%= form.label :scan_report %>
-  <%= form.number_field :scan_report_id, in: 1..@scan_reports.length %>
+  <%= form.number_field :scan_report_id, in: scan_report_id_range %>
   <br />
   <br />
   <%= form.submit "Compare" %>

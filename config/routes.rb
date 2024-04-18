@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :scan_reports
   resources :inventories
   resources :lists, only: %i[index create]
+  get 'list' => 'lists#show'
+  get 'download_csv', to: 'lists#download_csv'
 end
