@@ -1,0 +1,7 @@
+<h1>Inventories#upload</h1>
+
+  <%= form_with model: @inventory do |form|  %>
+    <%= form.file_field :csv_file %>
+
+    <%= submit_tag "Upload" %>
+  <% end %>

@@ -43,17 +43,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_12_155449) do
   end
 
   create_table "inventories", force: :cascade do |t|
-    t.string "location"
-    t.string "item"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "scan_reports", force: :cascade do |t|
-    t.string "name"
-    t.boolean "scanned", default: true, null: false
-    t.boolean "occupied", default: false, null: false
-    t.string "barcodes", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

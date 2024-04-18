@@ -1,0 +1,2 @@
+module ScanReportsHelper
+end

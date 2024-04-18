@@ -1,0 +1,24 @@
+<h1> Inventories </h1>    
+<% @inventories.each do |inventory| %>
+  <p> <%= inventory.id %> </p>
+<% end %>
+<%= link_to "Upload Inventory", new_inventory_path %>
+
+<h1> Scan Reports </h1>
+<% @scan_reports.each do |scan_report| %>
+  <p> <%= scan_report.id %> </p>
+<% end %>
+
+<%= form_with scope: :list do |form| %>
+  <% if @inventories.present? %>
+    <%= form.label :inventory %>
+    <%= form.number_field :inventory_id, in: inventory_id_range %>
+    <br />
+    <br />
+  <% end %>
+  <%= form.label :scan_report %>
+  <%= form.number_field :scan_report_id, in: 1..@scan_reports.length %>
+  <br />
+  <br />
+  <%= form.submit "Compare" %>
+<% end %>
